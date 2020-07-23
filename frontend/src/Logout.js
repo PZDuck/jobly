@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Redirect, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import LoggedInContext from "./LoggedInContext";
 import { useLocalStorage } from "./Hooks";
 
@@ -10,7 +10,7 @@ function Logout() {
   const logout = () => {
     removeToken("_token");
     setLoggedIn(false);
-    setUser({});
+    setUser(null);
     history.push("/");
   };
 

@@ -3,6 +3,7 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import Companies from "./Companies";
 import Home from "./Home";
 import Jobs from "./Jobs";
+import Job from "./Job";
 import Company from "./Company";
 import Login from "./Login";
 import Profile from "./Profile";
@@ -23,6 +24,9 @@ function Routes() {
       </Route>
       <Route exact path="/jobs">
         <Jobs />
+      </Route>
+      <Route exact path="/jobs/:id">
+        <Job />
       </Route>
       <Route exact path="/login">
         <Login />

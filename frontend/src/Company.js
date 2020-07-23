@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Api from "./JoblyApi";
-import CompanyItem from "./CompanyItem";
+import ItemCard from "./ItemCard";
 
 function Company() {
   const { handle } = useParams();
   const [company, setCompany] = useState({});
-  console.log(company);
 
   useEffect(() => {
     async function getCompany() {
@@ -19,12 +18,16 @@ function Company() {
   return (
     <div className="Company">
       {company ? (
-        <CompanyItem
-          name={company.name}
-          description={company.description}
-          num_employees={company.num_employees}
-          jobs={company.jobs}
-        />
+        <div className="CompanyItem">
+          <h1>{company.name}</h1>
+          <p>{company.description}</p>
+          <p>Number of employees: {company.num_employees}</p>
+          {company.jobs ? (
+            company.jobs.map((job) => <ItemCard key={job.id} data={job} />)
+          ) : (
+            <p>No jobs</p>
+          )}
+        </div>
       ) : (
         <div class="loading">Loading...</div>
       )}

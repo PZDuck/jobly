@@ -11,7 +11,7 @@ import Api from "./JoblyApi";
 import JWTDecode from "jwt-decode";
 
 function App() {
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState(null);
   const [loggedIn, setLoggedIn] = useState(false);
   const [token, setToken] = useLocalStorage("_token", "");
 

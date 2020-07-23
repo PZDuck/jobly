@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import LoggedInContext from "./LoggedInContext";
 import SearchForm from "./SearchForm";
 import ItemCard from "./ItemCard";
+import Unauthorized from "./Unauthorized";
 import Api from "./JoblyApi";
 
 function Companies() {
+  const { user } = useContext(LoggedInContext);
   const [searchParams, setSearchParams] = useState({
     search: "",
     min: 0,
@@ -13,8 +16,12 @@ function Companies() {
 
   useEffect(() => {
     async function searchCompanies() {
-      const companies = await Api.getCompanies(searchParams);
-      setFilteredCompanies(companies);
+      try {
+        const companies = await Api.getCompanies(searchParams);
+        setFilteredCompanies(companies);
+      } catch (err) {
+        console.log(err);
+      }
     }
 
     searchCompanies();
@@ -38,12 +45,22 @@ function Companies() {
   return (
     <>
       <h1>Companies</h1>
-      <SearchForm setSearchParams={setSearchParams} />
-      <div className="Companies">
-        {filteredCompanies.map((company) => {
-          return <ItemCard key={company.handle} data={company} />;
-        })}
-      </div>
+      {user ? (
+        <>
+          <SearchForm setSearchParams={setSearchParams} />
+          <div className="Companies">
+            {filteredCompanies.length ? (
+              filteredCompanies.map((company) => {
+                return <ItemCard key={company.handle} data={company} />;
+              })
+            ) : (
+              <div>Nothing found. Try another search parameter</div>
+            )}
+          </div>
+        </>
+      ) : (
+        <Unauthorized />
+      )}
     </>
   );
 }

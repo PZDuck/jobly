@@ -1,4 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
+import { Redirect } from "react-router-dom";
 import Api from "./JoblyApi";
 import LoggedInContext from "./LoggedInContext";
 
@@ -15,19 +16,24 @@ function Profile() {
   const [formData, setFormData] = useState(INITIAL_STATE);
 
   useEffect(() => {
-    if (user) {
+    if (user)
       setFormData({
         first_name: user.first_name,
         last_name: user.last_name,
         email: user.email,
         photo_url: user.photo_url || "",
       });
-    }
   }, [user]);
 
+  if (!user) return <Redirect to="/login" />;
+
   async function updateUser() {
-    const resp = await Api.updateUser(user.username, formData);
-    setUser(resp);
+    try {
+      const resp = await Api.updateUser(user.username, formData);
+      setUser(resp);
+    } catch (err) {
+      console.log(err);
+    }
   }
 
   const handleChange = (e) => {
