@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter } from "react-router-dom";
-import Routes from "./Routes";
-import NavBar from "./NavBar";
-import LoggedInContext from "./LoggedInContext";
-import "./App.css";
+import Routes from "./components/Routes";
+import NavBar from "./components/NavBar";
+import LoggedInContext from "./components/LoggedInContext";
+import "./styles/App.css";
 import { useLocalStorage } from "./Hooks";
 
 // REVISIT
