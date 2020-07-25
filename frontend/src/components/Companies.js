@@ -4,6 +4,7 @@ import SearchForm from "./SearchForm";
 import ItemCard from "./ItemCard";
 import Unauthorized from "./auth/Unauthorized";
 import Api from "../JoblyApi";
+import "../styles/Companies.css";
 
 function Companies() {
   const { user } = useContext(LoggedInContext);
@@ -43,12 +44,12 @@ function Companies() {
   */
 
   return (
-    <>
+    <div className="Companies">
       <h1>Companies</h1>
       {user ? (
         <>
           <SearchForm setSearchParams={setSearchParams} />
-          <div className="Companies">
+          <div className="CompaniesItems">
             {filteredCompanies.length ? (
               filteredCompanies.map((company) => {
                 return <ItemCard key={company.handle} data={company} />;
@@ -61,7 +62,7 @@ function Companies() {
       ) : (
         <Unauthorized />
       )}
-    </>
+    </div>
   );
 }
 

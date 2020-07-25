@@ -1,26 +1,32 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "../styles/ItemCard.css";
 
 function Card({ data }) {
   if (data.handle) {
     return (
-      <Link to={`companies/${data.handle}`}>
-        <div>
+      <div className="CompanyItem">
+        <Link to={`companies/${data.handle}`}>
           <h2>{data.name}</h2>
           <p>{data.description}</p>
-        </div>
-      </Link>
+          <button>More</button>
+        </Link>
+      </div>
     );
   } else {
     return (
-      <Link to={`/jobs/${data.id}`}>
-        <div>
-          <h2>{data.title}</h2>
-          <p>{data.company_handle}</p>
-          <span>{data.salary}</span>
-          <button>Learn More</button>
-        </div>
-      </Link>
+      <div className="JobItem">
+        <h2>{data.title}</h2>
+        <Link to={`/companies/${data.company_handle}`}>
+          <span className="icon"></span>
+          <h3>{data.company_name}</h3>
+        </Link>
+        <span>Expected Salary: {data.salary}</span>
+
+        <Link to={`/jobs/${data.id}`} className="JobItem-btn">
+          Apply
+        </Link>
+      </div>
     );
   }
 }

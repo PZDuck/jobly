@@ -1,0 +1,124 @@
+.CompanyItem {
+  border: 2px white solid;
+  padding: 2rem;
+  margin: 1rem;
+  width: 15vw;
+  height: 20vh;
+  background: linear-gradient(45deg, #161212, #71c1f7);
+  border-radius: 5px;
+}
+
+.CompanyItem a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  height: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-decoration: none;
+  color: white;
+}
+
+.CompanyItem a h2 {
+  font-size: 20px;
+  padding-bottom: 1rem;
+  border-bottom: 1px white solid;
+}
+
+.CompanyItem a p {
+  margin-top: 1rem;
+  font-size: 14px;
+}
+
+.CompanyItem a button {
+  position: absolute;
+  bottom: 0;
+  color: #fff !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #60a3bc;
+  padding: 10px;
+  display: inline-block;
+  border: none;
+  -webkit-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+}
+
+.CompanyItem a button:hover {
+  text-shadow: 0px 0px 6px white;
+  -webkit-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+}
+
+.JobItem {
+  border: 2px white solid;
+  padding: 2rem;
+  margin: 1rem;
+  width: 15vw;
+  height: 20vh;
+  background: linear-gradient(45deg, black, #71c1f7);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: white;
+  border-radius: 5px;
+}
+
+.JobItem a {
+  color: white;
+  text-decoration: none;
+}
+
+.JobItem h2 {
+  font-size: 20px;
+  padding-bottom: 1rem;
+  border-bottom: 1px white solid;
+}
+
+.JobItem h3 {
+  display: inline-block;
+  font-size: 18px;
+}
+
+.JobItem .icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background: url("../img/job.png");
+}
+
+.JobItem p {
+  margin-top: 1rem;
+  font-size: 14px;
+}
+
+.JobItem .JobItem-btn {
+  text-decoration: none;
+  position: absolute;
+  bottom: 0;
+  color: #fff !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #60a3bc;
+  padding: 10px;
+  margin-bottom: 1rem;
+  display: inline-block;
+  border: none;
+  -webkit-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+}
+
+.JobItem .JobItem-btn:hover {
+  text-shadow: 0px 0px 6px white;
+  -webkit-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+}
+/*# sourceMappingURL=ItemCard.css.map */

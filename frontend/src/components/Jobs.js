@@ -4,6 +4,7 @@ import SearchForm from "./SearchForm";
 import ItemCard from "./ItemCard";
 import Api from "../JoblyApi";
 import Unauthorized from "./auth/Unauthorized";
+import "../styles/Jobs.css";
 
 function Jobs() {
   const { user } = useContext(LoggedInContext);
@@ -28,12 +29,12 @@ function Jobs() {
   }, [searchParams]);
 
   return (
-    <>
+    <div className="Jobs">
       <h1>Jobs</h1>
       {user ? (
         <>
           <SearchForm setSearchParams={setSearchParams} />
-          <div className="Jobs">
+          <div className="JobsItems">
             {filteredJobs.length ? (
               filteredJobs.map((job) => {
                 return <ItemCard key={job.id} data={job} />;
@@ -46,7 +47,7 @@ function Jobs() {
       ) : (
         <Unauthorized />
       )}
-    </>
+    </div>
   );
 }
 

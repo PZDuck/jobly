@@ -1,0 +1,21 @@
+.Jobs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5vh;
+
+    h1 {
+        color: white;
+        font-size: 48px;
+        letter-spacing: 3px;
+        margin: 5vh;
+    }
+
+}
+
+.JobsItems {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
