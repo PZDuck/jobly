@@ -1,11 +1,23 @@
+@font-face {
+    font-family: montserrat-regular;
+    src: url('../fonts/Montserrat-Regular.ttf')
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: 0;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: montserrat-regular, 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 html,
 body {
     height: 100%;
+}
+
+ol,
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }

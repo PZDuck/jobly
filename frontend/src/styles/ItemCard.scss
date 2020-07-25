@@ -1,10 +1,10 @@
-.CompanyItem {
+.CompanyItemCard {
     border: 2px white solid;
     padding: 2rem;
     margin: 1rem;
     width: 15vw;
     height: 20vh;
-    background: linear-gradient(45deg, rgb(22, 18, 18), rgb(113, 193, 247));
+    background: rgba(255, 255, 255, 0.9);
     border-radius: 5px;
 
     a {
@@ -13,12 +13,12 @@
         height: 100%;
         flex-direction: column;
         text-decoration: none;
-        color: white;
+        color: black;
 
         h2 {
             font-size: 20px;
             padding-bottom: 1rem;
-            border-bottom: 1px white solid;
+            border-bottom: 1px black solid;
         }
 
         p {
@@ -47,33 +47,44 @@
 }
 
 
-.JobItem {
+.JobItemCard {
     border: 2px white solid;
     padding: 2rem;
     margin: 1rem;
     width: 15vw;
     height: 20vh;
-    background: linear-gradient(45deg, rgb(0, 0, 0), rgb(113, 193, 247));
+    background: rgba(255, 255, 255, 0.9);
     display: flex;
     position: relative;
     flex-direction: column;
-    color: white;
     border-radius: 5px;
+    color: black;
 
     a {
-        color: white;
+        color: black;
         text-decoration: none;
     }
 
     h2 {
         font-size: 20px;
         padding-bottom: 1rem;
-        border-bottom: 1px white solid;
+        border-bottom: 1px black solid;
     }
 
     h3 {
         display: inline-block;
         font-size: 18px;
+        margin-left: 0.5rem;
+    }
+
+    span {
+        margin: 0.5rem 0;
+    }
+
+    .JobItem-company {
+        display: flex;
+        align-items: center;
+        padding: 0.5rem 0;
     }
 
     .icon {
@@ -95,7 +106,7 @@
         color: #fff !important;
         text-transform: uppercase;
         text-decoration: none;
-        background: #60a3bc;
+        background: #5ba82f;
         padding: 10px;
         margin-bottom: 1rem;
         display: inline-block;

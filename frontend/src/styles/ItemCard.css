@@ -1,14 +1,14 @@
-.CompanyItem {
+.CompanyItemCard {
   border: 2px white solid;
   padding: 2rem;
   margin: 1rem;
   width: 15vw;
   height: 20vh;
-  background: linear-gradient(45deg, #161212, #71c1f7);
+  background: rgba(255, 255, 255, 0.9);
   border-radius: 5px;
 }
 
-.CompanyItem a {
+.CompanyItemCard a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -19,21 +19,21 @@
       -ms-flex-direction: column;
           flex-direction: column;
   text-decoration: none;
-  color: white;
+  color: black;
 }
 
-.CompanyItem a h2 {
+.CompanyItemCard a h2 {
   font-size: 20px;
   padding-bottom: 1rem;
-  border-bottom: 1px white solid;
+  border-bottom: 1px black solid;
 }
 
-.CompanyItem a p {
+.CompanyItemCard a p {
   margin-top: 1rem;
   font-size: 14px;
 }
 
-.CompanyItem a button {
+.CompanyItemCard a button {
   position: absolute;
   bottom: 0;
   color: #fff !important;
@@ -47,19 +47,19 @@
   transition: all 0.4s ease 0s;
 }
 
-.CompanyItem a button:hover {
+.CompanyItemCard a button:hover {
   text-shadow: 0px 0px 6px white;
   -webkit-transition: all 0.4s ease 0s;
   transition: all 0.4s ease 0s;
 }
 
-.JobItem {
+.JobItemCard {
   border: 2px white solid;
   padding: 2rem;
   margin: 1rem;
   width: 15vw;
   height: 20vh;
-  background: linear-gradient(45deg, black, #71c1f7);
+  background: rgba(255, 255, 255, 0.9);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -68,46 +68,61 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  color: white;
   border-radius: 5px;
+  color: black;
 }
 
-.JobItem a {
-  color: white;
+.JobItemCard a {
+  color: black;
   text-decoration: none;
 }
 
-.JobItem h2 {
+.JobItemCard h2 {
   font-size: 20px;
   padding-bottom: 1rem;
-  border-bottom: 1px white solid;
+  border-bottom: 1px black solid;
 }
 
-.JobItem h3 {
+.JobItemCard h3 {
   display: inline-block;
   font-size: 18px;
+  margin-left: 0.5rem;
 }
 
-.JobItem .icon {
+.JobItemCard span {
+  margin: 0.5rem 0;
+}
+
+.JobItemCard .JobItem-company {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.5rem 0;
+}
+
+.JobItemCard .icon {
   display: inline-block;
   width: 24px;
   height: 24px;
   background: url("../img/job.png");
 }
 
-.JobItem p {
+.JobItemCard p {
   margin-top: 1rem;
   font-size: 14px;
 }
 
-.JobItem .JobItem-btn {
+.JobItemCard .JobItem-btn {
   text-decoration: none;
   position: absolute;
   bottom: 0;
   color: #fff !important;
   text-transform: uppercase;
   text-decoration: none;
-  background: #60a3bc;
+  background: #5ba82f;
   padding: 10px;
   margin-bottom: 1rem;
   display: inline-block;
@@ -116,7 +131,7 @@
   transition: all 0.4s ease 0s;
 }
 
-.JobItem .JobItem-btn:hover {
+.JobItemCard .JobItem-btn:hover {
   text-shadow: 0px 0px 6px white;
   -webkit-transition: all 0.4s ease 0s;
   transition: all 0.4s ease 0s;

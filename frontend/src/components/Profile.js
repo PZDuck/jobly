@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Api from "../JoblyApi";
 import LoggedInContext from "./LoggedInContext";
 import Unauthorized from "./auth/Unauthorized";
+import "../styles/Profile.css";
 
 function Profile() {
   const INITIAL_STATE = {
@@ -54,11 +55,22 @@ function Profile() {
   } else
     return (
       <div className="Profile">
-        <h1>Profile</h1>
+        <div className="Profile-main">
+          <img src={user.photo_url} />
+          <h3>{user.username}</h3>
+          <a className="btn" href="#open-modal">
+            Edit info
+          </a>
 
-        <div className="Profile-info">
-          <ul>
-            {Object.keys(user).map((key) =>
+          <div className="Profile-info">
+            <ul>
+              <li>First Name: {user.first_name}</li>
+              <li>Last Name: {user.last_name}</li>
+              <li>Email: {user.email}</li>
+            </ul>
+          </div>
+
+          {/* {Object.keys(user).map((key) =>
               key === "jobs" ? (
                 <li>
                   {`${key}`}:{" "}
@@ -77,49 +89,84 @@ function Profile() {
                   {`${key}`}: {user[key]}
                 </li>
               )
-            )}
-          </ul>
+            )} */}
         </div>
 
-        <form onSubmit={handleSubmit}>
-          <input
-            onChange={handleChange}
-            type="text"
-            placeholder="First Name"
-            name="first_name"
-            value={`${formData.first_name}`}
-          />
-          <input
-            onChange={handleChange}
-            type="text"
-            placeholder="Last Name"
-            name="last_name"
-            value={`${formData.last_name}`}
-          />
-          <input
-            onChange={handleChange}
-            type="text"
-            placeholder="Email"
-            name="email"
-            value={`${formData.email}`}
-          />
-          <input
-            onChange={handleChange}
-            type="text"
-            placeholder="Photo URL"
-            name="photo_url"
-            value={`${formData.photo_url}`}
-          />
-          <input
-            onChange={handleChange}
-            type="password"
-            placeholder="Verify Password"
-            name="password"
-          />
-          <button type="submit" name="button">
-            Submit
-          </button>
-        </form>
+        <div className="Profile-applications">
+          <h2>My Applications</h2>
+          <div className="applications">
+            {user.jobs
+              ? Object.keys(user.jobs).map((id) => (
+                  <div key={id} className="Profile-Job">
+                    <Link to={`/jobs/${id}`}>
+                      <h3>{user.jobs[id].title}</h3>{" "}
+                      {user.jobs[id].state === "applied" ? (
+                        <span className="applied">Applied</span>
+                      ) : (
+                        <span className="revoked">Revoked</span>
+                      )}
+                      <br />
+                      <span className="company">
+                        {user.jobs[id].company_handle}
+                      </span>
+                    </Link>
+                  </div>
+                ))
+              : null}
+          </div>
+        </div>
+
+        <div id="open-modal" className="modal-window">
+          <div className="Profile-form">
+            <a href="#" title="Close" className="modal-close">
+              Close
+            </a>
+            <label for="first_name">First Name</label>
+            <form onSubmit={handleSubmit}>
+              <input
+                onChange={handleChange}
+                type="text"
+                placeholder="First Name"
+                name="first_name"
+                value={`${formData.first_name}`}
+              />
+              <label for="last_name">Last Name</label>
+              <input
+                onChange={handleChange}
+                type="text"
+                placeholder="Last Name"
+                name="last_name"
+                value={`${formData.last_name}`}
+              />
+              <label for="email">Email</label>
+              <input
+                onChange={handleChange}
+                type="text"
+                placeholder="Email"
+                name="email"
+                value={`${formData.email}`}
+              />
+              <label for="photo_url">Avatar</label>
+              <input
+                onChange={handleChange}
+                type="text"
+                placeholder="Photo URL"
+                name="photo_url"
+                value={`${formData.photo_url}`}
+              />
+              <label for="password">Password</label>
+              <input
+                onChange={handleChange}
+                type="password"
+                placeholder="Verify Password"
+                name="password"
+              />
+              <button type="submit" name="button">
+                Submit
+              </button>
+            </form>
+          </div>
+        </div>
       </div>
     );
 }

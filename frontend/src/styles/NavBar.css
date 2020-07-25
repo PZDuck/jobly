@@ -53,6 +53,6 @@
 }
 
 .active {
-  color: #23d4c6 !important;
+  text-decoration: underline;
 }
 /*# sourceMappingURL=NavBar.css.map */

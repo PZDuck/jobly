@@ -1,0 +1,90 @@
+.Job {
+  position: relative;
+  background: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  width: 50%;
+  height: 250px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Job a {
+  display: inline;
+  text-decoration: none;
+  color: black;
+}
+
+.Job a::before {
+  content: url("../img/job.png");
+  padding: 0 5px 0 0;
+  vertical-align: middle;
+}
+
+.Job .revoked {
+  color: #f33939;
+  font-size: 20px;
+}
+
+.Job .revoked::before {
+  content: url("../img/revoked.png");
+  margin-right: 0.3rem;
+}
+
+.Job .applied {
+  color: #03b103;
+  font-size: 20px;
+}
+
+.Job .applied::before {
+  content: url("../img/applied.png");
+  margin-right: 0.3rem;
+}
+
+.Job .btn-apply {
+  color: #fff !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #5ba82f;
+  padding: 10px;
+  border: none;
+  display: inline-block;
+  -webkit-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+}
+
+.Job .btn-apply:hover {
+  text-shadow: 0px 0px 6px white;
+  -webkit-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+}
+
+.Job .btn-revoke {
+  color: #fff !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #b62525;
+  padding: 10px;
+  border: none;
+  display: inline-block;
+  -webkit-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+}
+
+.Job .btn-revoke:hover {
+  text-shadow: 0px 0px 6px white;
+  -webkit-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+}
+/*# sourceMappingURL=Job.css.map */

@@ -1,0 +1,42 @@
+.Company {
+  min-height: 100%;
+}
+
+.CompanyItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 5vh auto 0 auto;
+  letter-spacing: 1px;
+  color: white;
+  max-height: 80vh;
+  max-width: 80vw;
+}
+
+.CompanyItem h1 {
+  margin: 2rem;
+}
+
+.Company-jobs {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 2rem;
+}
+/*# sourceMappingURL=Company.css.map */

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import LoggedInContext from "./LoggedInContext";
 import { useParams } from "react-router-dom";
 import Api from "../JoblyApi";
+import "../styles/Job.css";
 
 function Job() {
   const { user, setUser } = useContext(LoggedInContext);
@@ -40,18 +41,28 @@ function Job() {
               </Link>
             ) : null}
           </p>
-          <span>{job.salary}</span>
+          <span>Expected salary: {job.salary}</span>
           {user.jobs[id] && user.jobs[id].state === "revoked" ? (
             <p>You revoked your application</p>
           ) : (
             <>
-              {" "}
               {job.id in user.jobs ? (
-                <button onClick={handleClick} data-action="revoked">
-                  Applied!
-                </button>
+                <>
+                  <p>You applied for this position!</p>
+                  <button
+                    onClick={handleClick}
+                    data-action="revoked"
+                    className="btn-revoke"
+                  >
+                    Revoke
+                  </button>
+                </>
               ) : (
-                <button onClick={handleClick} data-action="applied">
+                <button
+                  onClick={handleClick}
+                  data-action="applied"
+                  className="btn-apply"
+                >
                   Apply
                 </button>
               )}
