@@ -9,9 +9,10 @@ class Job {
   static async findAll(data, username) {
     console.log(data);
     let baseQuery = `
-      SELECT id, title, company_handle, salary, equity, a.state 
+      SELECT id, title, company_handle, c.name AS company_name, salary, equity, a.state 
       FROM jobs 
-        LEFT OUTER JOIN applications AS a on a.job_id = id AND a.username = $1`;
+        LEFT OUTER JOIN applications AS a on a.job_id = id AND a.username = $1
+        LEFT OUTER JOIN companies AS c on c.handle = company_handle`;
     let whereExpressions = [];
     let queryValues = [username];
 
