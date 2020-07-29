@@ -21,8 +21,12 @@ function Card({ data }) {
           to={`/companies/${data.company_handle}`}
           className="JobItem-company"
         >
-          <span className="icon"></span>
-          <h3>{data.company_name}</h3>
+          {data.company_name ? (
+            <>
+              <span className="icon"></span>
+              <h3>{data.company_name}</h3>
+            </>
+          ) : null}
         </Link>
         <span>Expected Salary: {data.salary}</span>
 

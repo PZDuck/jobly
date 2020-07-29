@@ -64,32 +64,17 @@ function Profile() {
 
           <div className="Profile-info">
             <ul>
-              <li>First Name: {user.first_name}</li>
-              <li>Last Name: {user.last_name}</li>
-              <li>Email: {user.email}</li>
+              <li>
+                <span>First Name:</span> {user.first_name}
+              </li>
+              <li>
+                <span>Last Name:</span> {user.last_name}
+              </li>
+              <li>
+                <span>Email:</span> {user.email}
+              </li>
             </ul>
           </div>
-
-          {/* {Object.keys(user).map((key) =>
-              key === "jobs" ? (
-                <li>
-                  {`${key}`}:{" "}
-                  {Object.keys(user.jobs).map((id) => (
-                    <div className="Profile-Job">
-                      <Link to={`/jobs/${id}`}>
-                        <span>{user.jobs[id].title}</span>
-                        <br />
-                        <span>{user.jobs[id].company_handle}</span>
-                      </Link>
-                    </div>
-                  ))}
-                </li>
-              ) : (
-                <li>
-                  {`${key}`}: {user[key]}
-                </li>
-              )
-            )} */}
         </div>
 
         <div className="Profile-applications">
@@ -117,12 +102,13 @@ function Profile() {
         </div>
 
         <div id="open-modal" className="modal-window">
-          <div className="Profile-form">
+          <div className="modal-form">
             <a href="#" title="Close" className="modal-close">
               Close
             </a>
-            <label for="first_name">First Name</label>
-            <form onSubmit={handleSubmit}>
+            <h2>Edit Profile Information</h2>
+            <form className="Profile-form" onSubmit={handleSubmit}>
+              <label htmlFor="first_name">First Name</label>
               <input
                 onChange={handleChange}
                 type="text"
@@ -130,7 +116,7 @@ function Profile() {
                 name="first_name"
                 value={`${formData.first_name}`}
               />
-              <label for="last_name">Last Name</label>
+              <label htmlFor="last_name">Last Name</label>
               <input
                 onChange={handleChange}
                 type="text"
@@ -138,7 +124,7 @@ function Profile() {
                 name="last_name"
                 value={`${formData.last_name}`}
               />
-              <label for="email">Email</label>
+              <label htmlFor="email">Email</label>
               <input
                 onChange={handleChange}
                 type="text"
@@ -146,7 +132,7 @@ function Profile() {
                 name="email"
                 value={`${formData.email}`}
               />
-              <label for="photo_url">Avatar</label>
+              <label htmlFor="photo_url">Avatar</label>
               <input
                 onChange={handleChange}
                 type="text"
@@ -154,14 +140,15 @@ function Profile() {
                 name="photo_url"
                 value={`${formData.photo_url}`}
               />
-              <label for="password">Password</label>
+              <label htmlFor="password">Password</label>
               <input
                 onChange={handleChange}
                 type="password"
                 placeholder="Verify Password"
                 name="password"
+                required
               />
-              <button type="submit" name="button">
+              <button id="submit" type="submit" name="button">
                 Submit
               </button>
             </form>

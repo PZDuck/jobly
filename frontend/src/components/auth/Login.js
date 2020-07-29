@@ -1,7 +1,8 @@
 import React, { useState, useContext } from "react";
-import { Redirect, useHistory } from "react-router-dom";
+import { Redirect, Link, useHistory } from "react-router-dom";
 import LoggedInContext from "../LoggedInContext";
 import Api from "../../JoblyApi";
+import "../../styles/Login.css";
 
 function Login() {
   const history = useHistory();
@@ -43,25 +44,26 @@ function Login() {
   }
 
   return (
-    <div className="LoginForm">
-      <h1>Login</h1>
-      <form onSubmit={handleSubmit}>
-        <input
-          onChange={handleChange}
-          type="text"
-          name="username"
-          placeholder="Username"
-        />
-        <input
-          onChange={handleChange}
-          type="password"
-          name="password"
-          placeholder="Password"
-        />
-        <button type="submit" name="button">
-          Submit
-        </button>
-      </form>
+    <div className="Login">
+      <div className="Login-container">
+        <div className="Login-left">
+          <h1>Login</h1>
+          <div className="Login-register">
+            First time visiting? <Link to="/login">Create an account!</Link>
+          </div>
+        </div>
+        <div className="Login-right">
+          <form className="Login-form" onSubmit={handleSubmit}>
+            <label for="username">Username</label>
+            <input onChange={handleChange} type="text" name="username" />
+            <label for="password">Password</label>
+            <input onChange={handleChange} type="password" name="password" />
+            <button id="Login-submit" type="submit" name="button">
+              Login
+            </button>
+          </form>
+        </div>
+      </div>
     </div>
   );
 }

@@ -27,6 +27,11 @@
   background-color: white;
 }
 
+.NavBar-links:hover .active {
+  border-bottom: 1px solid black;
+  text-shadow: 0 0 5px black;
+}
+
 .NavBar-links:hover a {
   color: black;
   -webkit-transition: all 0.3s ease-in-out;
@@ -39,7 +44,8 @@
   color: white;
   font-size: 18px;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  padding: 1.5vw;
+  padding: 0.5vw 1vw;
+  margin: 1vw;
 }
 
 .NavBar-links a:hover {
@@ -53,6 +59,7 @@
 }
 
 .active {
-  text-decoration: underline;
+  border-bottom: 1px solid white;
+  text-shadow: 0 0 5px white;
 }
 /*# sourceMappingURL=NavBar.css.map */

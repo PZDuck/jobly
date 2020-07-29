@@ -69,6 +69,7 @@
   background-color: #d6d6d6;
   text-align: left;
   padding: 15px;
+  margin-top: 5%;
 }
 
 .Profile-main .Profile-info ul {
@@ -78,14 +79,19 @@
 }
 
 .Profile-main .Profile-info ul li {
-  border: 1px solid #2D2747;
   border-radius: 2px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  font-size: 14px;
+  font-size: 18px;
   margin: 0 7px 7px 0;
   padding: 7px;
+  border-bottom: 1px solid black;
+}
+
+.Profile-main .Profile-info ul li span {
+  padding: 0 10px;
+  font-weight: 600;
 }
 
 .Profile-applications {
@@ -228,5 +234,57 @@ small {
 
 .btn i {
   padding-right: 0.3em;
+}
+
+.Profile-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 5%;
+}
+
+.Profile-form label {
+  margin-top: 15px;
+  font-weight: 600;
+}
+
+.Profile-form input {
+  border: 0;
+  outline: none;
+  border-bottom: 1px solid black;
+  padding: 10px 0;
+  font-size: 14px;
+  -webkit-transition: 0.2s all ease-in-out;
+  transition: 0.2s all ease-in-out;
+}
+
+.Profile-form input:focus {
+  border: 2px solid black;
+  padding: 10px 5px;
+  -webkit-box-shadow: 0 0 2px black;
+          box-shadow: 0 0 2px black;
+}
+
+#submit {
+  margin: 5% auto 0 auto;
+  color: #fff !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #5ba82f;
+  padding: 10px;
+  border: none;
+  display: inline-block;
+  -webkit-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+}
+
+#submit:hover {
+  text-shadow: 0px 0px 6px white;
+  -webkit-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
 }
 /*# sourceMappingURL=Profile.css.map */
