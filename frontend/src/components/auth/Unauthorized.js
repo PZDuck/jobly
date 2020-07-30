@@ -1,12 +1,8 @@
 import React from "react";
+import { Redirect } from "react-router-dom";
 
 function Unauthorized() {
-  return (
-    <div>
-      <h1>Unauthorized</h1>
-      <p>Dinahuy otsuida</p>
-    </div>
-  );
+  return <Redirect to="/login" />;
 }
 
 export default Unauthorized;

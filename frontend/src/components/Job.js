@@ -43,12 +43,12 @@ function Job() {
           </p>
           <span>Expected salary: {job.salary}</span>
           {user.jobs[id] && user.jobs[id].state === "revoked" ? (
-            <p>You revoked your application</p>
+            <p className="revoked">You revoked your application</p>
           ) : (
             <>
               {job.id in user.jobs ? (
                 <>
-                  <p>You applied for this position!</p>
+                  <p className="applied">You applied for this position!</p>
                   <button
                     onClick={handleClick}
                     data-action="revoked"

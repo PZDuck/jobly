@@ -30,7 +30,7 @@ function Register() {
     setUser(user);
     setLoggedIn(true);
 
-    history.push("/login");
+    history.push("/");
   }
 
   const handleChange = (e) => {
@@ -53,15 +53,6 @@ function Register() {
   }
 
   return (
-    // <div>
-    //   <h1>Register</h1>
-
-    //     <button type="submit" name="button">
-    //       Submit
-    //     </button>
-    //   </form>
-    // </div>
-
     <div className="Register">
       <div className="Register-container">
         <div className="Register-left">

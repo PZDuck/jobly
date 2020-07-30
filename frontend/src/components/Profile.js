@@ -83,18 +83,18 @@ function Profile() {
             {user.jobs
               ? Object.keys(user.jobs).map((id) => (
                   <div key={id} className="Profile-Job">
-                    <Link to={`/jobs/${id}`}>
-                      <h3>{user.jobs[id].title}</h3>{" "}
-                      {user.jobs[id].state === "applied" ? (
-                        <span className="applied">Applied</span>
-                      ) : (
-                        <span className="revoked">Revoked</span>
-                      )}
-                      <br />
-                      <span className="company">
-                        {user.jobs[id].company_handle}
-                      </span>
+                    <Link className="Job-Link" to={`/jobs/${id}`}>
+                      <h3>{user.jobs[id].title}</h3>
                     </Link>
+                    <span className="company">
+                      Expected salary: {user.jobs[id].salary}
+                    </span>
+                    {user.jobs[id].state === "applied" ? (
+                      <span className="status applied">Applied</span>
+                    ) : (
+                      <span className="status revoked">Revoked</span>
+                    )}
+                    <br />
                   </div>
                 ))
               : null}

@@ -6,9 +6,8 @@ import "../../styles/Login.css";
 
 function Login() {
   const history = useHistory();
-  const { token, setToken, loggedIn, setLoggedIn } = useContext(
-    LoggedInContext
-  );
+  const { setToken, loggedIn, setLoggedIn } = useContext(LoggedInContext);
+  const [status, setStatus] = useState(null);
   const [formData, setFormData] = useState({
     username: "",
     password: "",
@@ -19,7 +18,16 @@ function Login() {
   }
 
   async function login() {
-    const _token = await Api.login(formData);
+    let _token;
+
+    try {
+      _token = await Api.login(formData);
+      setStatus("success");
+    } catch (err) {
+      console.log(err);
+      setStatus("error");
+      return;
+    }
 
     setToken(_token);
     setLoggedIn(true);
@@ -58,6 +66,11 @@ function Login() {
             <input onChange={handleChange} type="text" name="username" />
             <label for="password">Password</label>
             <input onChange={handleChange} type="password" name="password" />
+            {status === "error" ? (
+              <div className="error">
+                Incorrect Username/Password. Please try again
+              </div>
+            ) : null}
             <button id="Login-submit" type="submit" name="button">
               Login
             </button>

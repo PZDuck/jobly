@@ -7,32 +7,40 @@ function Card({ data }) {
     return (
       <div className="CompanyItemCard">
         <Link to={`companies/${data.handle}`}>
-          <h2>{data.name}</h2>
-          <p>{data.description}</p>
-          <button>More</button>
+          <div>
+            <h2>{data.name}</h2>
+            <hr />
+            <p>{data.description}</p>
+          </div>
+          <div>
+            <button>More</button>
+          </div>
         </Link>
       </div>
     );
   } else {
     return (
       <div className="JobItemCard">
-        <h2>{data.title}</h2>
-        <Link
-          to={`/companies/${data.company_handle}`}
-          className="JobItem-company"
-        >
-          {data.company_name ? (
-            <>
-              <span className="icon"></span>
-              <h3>{data.company_name}</h3>
-            </>
-          ) : null}
-        </Link>
-        <span>Expected Salary: {data.salary}</span>
-
-        <Link to={`/jobs/${data.id}`} className="JobItem-btn">
-          Apply
-        </Link>
+        <div>
+          <h2>{data.title}</h2>
+          <Link
+            to={`/companies/${data.company_handle}`}
+            className="JobItem-company"
+          >
+            {data.company_name ? (
+              <>
+                <span className="icon"></span>
+                <h3>{data.company_name}</h3>
+              </>
+            ) : null}
+          </Link>
+          <span>Expected Salary: {data.salary}</span>
+        </div>
+        <div>
+          <Link to={`/jobs/${data.id}`} className="JobItem-btn">
+            Apply
+          </Link>
+        </div>
       </div>
     );
   }

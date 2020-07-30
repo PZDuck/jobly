@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { useHistory } from "react-router-dom";
 import LoggedInContext from "../LoggedInContext";
 import { useLocalStorage } from "../../Hooks";
+import "../../styles/Logout.css";
 
 function Logout() {
   const [token, setToken, removeToken] = useLocalStorage("_token", "");
@@ -14,7 +15,14 @@ function Logout() {
     history.push("/");
   };
 
-  return <button onClick={logout}>Logout</button>;
+  return (
+    <div className="Logout">
+      <div className="Logout-text">
+        <h2>Please confirm your action</h2>
+      </div>
+      <button onClick={logout}>Logout</button>
+    </div>
+  );
 }
 
 export default Logout;
