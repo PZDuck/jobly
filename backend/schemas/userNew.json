@@ -10,6 +10,7 @@
       "default": "",
       "minLength": 1,
       "maxLength": 55,
+      "pattern": "^[a-zA-Z0-9_.-]*$",
       "examples": ["hueter"]
     },
     "password": {
@@ -28,6 +29,7 @@
       "default": "",
       "minLength": 1,
       "maxLength": 55,
+      "pattern": "^[a-zA-Z]+$",
       "examples": ["Michael"]
     },
     "last_name": {
@@ -37,6 +39,7 @@
       "default": "",
       "minLength": 1,
       "maxLength": 55,
+      "pattern": "^[a-zA-Z]+$",
       "examples": ["Hueter"]
     },
     "photo_url": {
@@ -56,6 +59,7 @@
       "maxLength": 60,
       "title": "The Email Schema ",
       "default": "",
+      "format": "email",
       "examples": ["michael@rithmschool.com"]
     }
   },
