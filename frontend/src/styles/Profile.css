@@ -126,6 +126,11 @@
           justify-content: center;
 }
 
+.applications .company {
+  display: block;
+  margin: 5px 0;
+}
+
 .Profile-Job {
   background: rgba(255, 255, 255, 0.9);
   border: 1px solid white;
@@ -133,11 +138,30 @@
   height: 150px;
   margin: 2rem;
   padding: 1.5rem;
+  -webkit-transition: 0.1s all ease-in-out;
+  transition: 0.1s all ease-in-out;
 }
 
-.Profile-Job a {
+.Profile-Job:hover {
+  background: white;
+  -webkit-box-shadow: 0 0 10px white;
+          box-shadow: 0 0 10px white;
+  padding: 1.8rem;
+}
+
+.Profile-Job:hover h3:hover {
+  text-shadow: 0 0 5px white;
+  border-bottom: 1px solid black;
+}
+
+.Profile-Job .Job-Link {
   text-decoration: none;
   color: black;
+}
+
+.Profile-Job .status {
+  display: block;
+  margin: 15px 0;
 }
 
 .Profile-Job .revoked {

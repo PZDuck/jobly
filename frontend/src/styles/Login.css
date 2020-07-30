@@ -106,4 +106,9 @@
   -webkit-transform: scale(0.98);
           transform: scale(0.98);
 }
+
+.error {
+  color: #c20707;
+  margin-top: 5%;
+}
 /*# sourceMappingURL=Login.css.map */

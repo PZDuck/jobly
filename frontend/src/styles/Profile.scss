@@ -99,6 +99,11 @@
     flex-wrap: wrap;
     margin: auto;
     justify-content: center;
+
+    .company {
+        display: block;
+        margin: 5px 0;
+    }
 }
 
 .Profile-Job {
@@ -108,10 +113,28 @@
     height: 150px;
     margin: 2rem;
     padding: 1.5rem;
+    transition: 0.1s all ease-in-out;
 
-    a {
+    &:hover {
+        background: rgb(255, 255, 255);
+        box-shadow: 0 0 10px white;
+        padding: 1.8rem;
+
+        h3:hover {
+            text-shadow: 0 0 5px white;
+            border-bottom: 1px solid black;
+        }
+    }
+
+    .Job-Link {
         text-decoration: none;
         color: black;
+
+    }
+
+    .status {
+        display: block;
+        margin: 15px 0;
     }
 
     .revoked {

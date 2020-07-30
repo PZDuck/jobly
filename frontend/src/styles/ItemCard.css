@@ -2,8 +2,8 @@
   border: 2px white solid;
   padding: 2rem;
   margin: 1rem;
-  width: 15vw;
-  height: 20vh;
+  width: 15%;
+  min-height: 25%;
   background: rgba(255, 255, 255, 0.9);
   border-radius: 5px;
 }
@@ -12,12 +12,17 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  position: relative;
   height: 100%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   text-decoration: none;
   color: black;
 }
@@ -25,7 +30,6 @@
 .CompanyItemCard a h2 {
   font-size: 20px;
   padding-bottom: 1rem;
-  border-bottom: 1px black solid;
 }
 
 .CompanyItemCard a p {
@@ -34,8 +38,7 @@
 }
 
 .CompanyItemCard a button {
-  position: absolute;
-  bottom: 0;
+  margin-top: 1rem;
   color: #fff !important;
   text-transform: uppercase;
   text-decoration: none;
@@ -57,17 +60,19 @@
   border: 2px white solid;
   padding: 2rem;
   margin: 1rem;
-  width: 15vw;
-  height: 20vh;
+  width: 15%;
+  min-height: 25%;
   background: rgba(255, 255, 255, 0.9);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  position: relative;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   border-radius: 5px;
   color: black;
 }
@@ -78,14 +83,14 @@
 }
 
 .JobItemCard h2 {
-  font-size: 20px;
+  font-size: 1.3vw;
   padding-bottom: 1rem;
   border-bottom: 1px black solid;
 }
 
 .JobItemCard h3 {
   display: inline-block;
-  font-size: 18px;
+  font-size: 1.2vw;
   margin-left: 0.5rem;
 }
 
@@ -100,7 +105,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0.5rem 0;
+  padding: 0.7rem 0;
 }
 
 .JobItemCard .icon {
@@ -117,14 +122,12 @@
 
 .JobItemCard .JobItem-btn {
   text-decoration: none;
-  position: absolute;
-  bottom: 0;
   color: #fff !important;
   text-transform: uppercase;
   text-decoration: none;
   background: #5ba82f;
   padding: 10px;
-  margin-bottom: 1rem;
+  margin-top: 1rem;
   display: inline-block;
   border: none;
   -webkit-transition: all 0.4s ease 0s;
@@ -135,5 +138,32 @@
   text-shadow: 0px 0px 6px white;
   -webkit-transition: all 0.4s ease 0s;
   transition: all 0.4s ease 0s;
+}
+
+@media only screen and (max-width: 1024px) {
+  .JobItemCard {
+    width: 33%;
+  }
+  .JobItemCard h2 {
+    font-size: 3vw;
+  }
+  .JobItemCard h3 {
+    font-size: 2.2vw;
+  }
+  .JobItemCard span {
+    font-size: 2.2vw;
+  }
+  .CompanyItemCard {
+    width: 33%;
+  }
+  .CompanyItemCard h2 {
+    font-size: 3vw;
+  }
+  .CompanyItemCard h3 {
+    font-size: 2.2vw;
+  }
+  .CompanyItemCard span {
+    font-size: 2.2vw;
+  }
 }
 /*# sourceMappingURL=ItemCard.css.map */

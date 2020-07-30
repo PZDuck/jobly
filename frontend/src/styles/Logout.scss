@@ -1,0 +1,36 @@
+.Logout {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    margin: 10% auto;
+    width: 50%;
+    height: 30vh;
+    background: rgba(255, 255, 255, 0.8);
+
+    p {
+        padding: 25px;
+    }
+
+    button {
+        color: #fff !important;
+        text-transform: uppercase;
+        text-decoration: none;
+        background: #b62525;
+        padding: 10px;
+        border: none;
+        display: inline-block;
+        transition: all 0.4s ease 0s;
+
+        &:hover {
+            font-size: 14px;
+            text-shadow: 0px 0px 6px rgb(255, 255, 255);
+            border-radius: 5px;
+            padding: 13px;
+        }
+
+        &:active {
+            padding: 5px;
+        }
+    }
+}

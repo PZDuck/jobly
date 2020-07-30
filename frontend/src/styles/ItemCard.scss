@@ -2,23 +2,23 @@
     border: 2px white solid;
     padding: 2rem;
     margin: 1rem;
-    width: 15vw;
-    height: 20vh;
+    width: 15%;
+    min-height: 25%;
     background: rgba(255, 255, 255, 0.9);
     border-radius: 5px;
 
     a {
         display: flex;
-        position: relative;
         height: 100%;
         flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
         text-decoration: none;
         color: black;
 
         h2 {
             font-size: 20px;
             padding-bottom: 1rem;
-            border-bottom: 1px black solid;
         }
 
         p {
@@ -27,8 +27,7 @@
         }
 
         button {
-            position: absolute;
-            bottom: 0;
+            margin-top: 1rem;
             color: #fff !important;
             text-transform: uppercase;
             text-decoration: none;
@@ -51,12 +50,12 @@
     border: 2px white solid;
     padding: 2rem;
     margin: 1rem;
-    width: 15vw;
-    height: 20vh;
+    width: 15%;
+    min-height: 25%;
     background: rgba(255, 255, 255, 0.9);
     display: flex;
-    position: relative;
     flex-direction: column;
+    justify-content: space-between;
     border-radius: 5px;
     color: black;
 
@@ -66,14 +65,14 @@
     }
 
     h2 {
-        font-size: 20px;
+        font-size: 1.3vw;
         padding-bottom: 1rem;
         border-bottom: 1px black solid;
     }
 
     h3 {
         display: inline-block;
-        font-size: 18px;
+        font-size: 1.2vw;
         margin-left: 0.5rem;
     }
 
@@ -84,7 +83,7 @@
     .JobItem-company {
         display: flex;
         align-items: center;
-        padding: 0.5rem 0;
+        padding: 0.7rem 0;
     }
 
     .icon {
@@ -101,14 +100,12 @@
 
     .JobItem-btn {
         text-decoration: none;
-        position: absolute;
-        bottom: 0;
         color: #fff !important;
         text-transform: uppercase;
         text-decoration: none;
         background: #5ba82f;
         padding: 10px;
-        margin-bottom: 1rem;
+        margin-top: 1rem;
         display: inline-block;
         border: none;
         transition: all 0.4s ease 0s;
@@ -116,6 +113,41 @@
         &:hover {
             text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
             transition: all 0.4s ease 0s;
+        }
+    }
+}
+
+
+@media only screen and (max-width: 1024px) {
+    .JobItemCard {
+        width: 33%;
+
+        h2 {
+            font-size: 3vw;
+        }
+
+        h3 {
+            font-size: 2.2vw;
+        }
+
+        span {
+            font-size: 2.2vw;
+        }
+    }
+
+    .CompanyItemCard {
+        width: 33%;
+
+        h2 {
+            font-size: 3vw;
+        }
+
+        h3 {
+            font-size: 2.2vw;
+        }
+
+        span {
+            font-size: 2.2vw;
         }
     }
 }

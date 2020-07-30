@@ -1,5 +1,6 @@
 import axios from "axios";
 
+console.log(process.env.URL);
 const API_URL = process.env.URL || "http://localhost:3001";
 
 class JoblyApi {

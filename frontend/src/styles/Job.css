@@ -65,9 +65,14 @@
 }
 
 .Job .btn-apply:hover {
+  font-size: 14px;
   text-shadow: 0px 0px 6px white;
-  -webkit-transition: all 0.4s ease 0s;
-  transition: all 0.4s ease 0s;
+  border-radius: 5px;
+  padding: 13px;
+}
+
+.Job .btn-apply:active {
+  padding: 5px;
 }
 
 .Job .btn-revoke {
@@ -83,8 +88,13 @@
 }
 
 .Job .btn-revoke:hover {
+  font-size: 14px;
   text-shadow: 0px 0px 6px white;
-  -webkit-transition: all 0.4s ease 0s;
-  transition: all 0.4s ease 0s;
+  border-radius: 5px;
+  padding: 13px;
+}
+
+.Job .btn-revoke:active {
+  padding: 5px;
 }
 /*# sourceMappingURL=Job.css.map */
