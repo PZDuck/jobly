@@ -8,6 +8,7 @@ import "../../styles/Register.css";
 function Register() {
   const history = useHistory();
   const [token, setToken, removeToken] = useLocalStorage("_token", "");
+  const [status, setStatus] = useState({});
 
   const [formData, setFormData] = useState({
     username: "",
@@ -24,7 +25,14 @@ function Register() {
   }
 
   async function register() {
-    const tkn = await Api.register(formData);
+    let tkn;
+
+    try {
+      tkn = await Api.register(formData);
+    } catch (err) {
+      setStatus(err[0]);
+      return;
+    }
     setToken(tkn);
     const user = await Api.getUser(formData.username);
     setUser(user);
@@ -45,11 +53,11 @@ function Register() {
     e.preventDefault();
     register();
 
-    e.target.username.value = "";
-    e.target.password.value = "";
-    e.target.first_name.value = "";
-    e.target.last_name.value = "";
-    e.target.email.value = "";
+    // e.target.username.value = "";
+    // e.target.password.value = "";
+    // e.target.first_name.value = "";
+    // e.target.last_name.value = "";
+    // e.target.email.value = "";
   }
 
   return (
@@ -63,15 +71,50 @@ function Register() {
         </div>
         <div className="Register-right">
           <form className="Register-form" onSubmit={handleSubmit}>
-            <label for="username">Username</label>
+            <label htmlFor="username">Username</label>
+            {status.username
+              ? Object.keys(status.username).map((m) => (
+                  <span key={m} className="error">
+                    {status.username[m]}
+                  </span>
+                ))
+              : null}
             <input onChange={handleChange} type="text" name="username" />
-            <label for="password">Password</label>
+            <label htmlFor="password">Password</label>
+            {status.password
+              ? Object.keys(status.password).map((m) => (
+                  <span key={m} className="error">
+                    {status.password[m]}
+                  </span>
+                ))
+              : null}
             <input onChange={handleChange} type="password" name="password" />
-            <label for="first_name">First Name</label>
+            <label htmlFor="first_name">First Name</label>
+            {status.first_name
+              ? Object.keys(status.first_name).map((m) => (
+                  <span key={m} className="error">
+                    {status.first_name[m]}
+                  </span>
+                ))
+              : null}
             <input onChange={handleChange} type="text" name="first_name" />
-            <label for="last_name">Last Name</label>
+            <label htmlFor="last_name">Last Name</label>
+            {status.last_name
+              ? Object.keys(status.last_name).map((m) => (
+                  <span key={m} className="error">
+                    {status.last_name[m]}
+                  </span>
+                ))
+              : null}
             <input onChange={handleChange} type="text" name="last_name" />
-            <label for="email">Email</label>
+            <label htmlFor="email">Email</label>
+            {status.email
+              ? Object.keys(status.email).map((m) => (
+                  <span key={m} className="error">
+                    {status.email[m]}
+                  </span>
+                ))
+              : null}
             <input onChange={handleChange} type="text" name="email" />
             <button id="Register-submit" type="submit" name="button">
               Register

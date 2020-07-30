@@ -99,4 +99,10 @@
   -webkit-transform: scale(0.98);
           transform: scale(0.98);
 }
+
+.error {
+  display: block;
+  color: #c20707;
+  margin: 5% 0;
+}
 /*# sourceMappingURL=Register.css.map */
