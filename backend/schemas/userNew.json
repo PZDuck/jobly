@@ -11,6 +11,10 @@
       "minLength": 1,
       "maxLength": 55,
       "pattern": "^[a-zA-Z0-9_.-]*$",
+      "message": {
+        "required": "This field is required",
+        "pattern": "May contain only letters, numbers, '_', '.' and '-'"
+      },
       "examples": ["hueter"]
     },
     "password": {
@@ -20,6 +24,10 @@
       "default": "",
       "minLength": 5,
       "maxLength": 55,
+      "message": {
+        "required": "This field is required",
+        "pattern": "Must contain minimum 5 symbols"
+      },
       "examples": ["foo123"]
     },
     "first_name": {
@@ -29,6 +37,9 @@
       "default": "",
       "minLength": 1,
       "maxLength": 55,
+      "message": {
+        "pattern": "May contain only letters"
+      },
       "pattern": "^[a-zA-Z]+$",
       "examples": ["Michael"]
     },
@@ -39,6 +50,9 @@
       "default": "",
       "minLength": 1,
       "maxLength": 55,
+      "message": {
+        "pattern": "May contain only letters"
+      },
       "pattern": "^[a-zA-Z]+$",
       "examples": ["Hueter"]
     },
@@ -48,6 +62,9 @@
       "title": "The Photo Schema ",
       "format": "uri",
       "default": "",
+      "message": {
+        "pattern": "Must be a valid URL"
+      },
       "examples": [
         "https://avatars0.githubusercontent.com/u/13444851?s=460&v=4"
       ]
@@ -59,6 +76,9 @@
       "maxLength": 60,
       "title": "The Email Schema ",
       "default": "",
+      "message": {
+        "pattern": "Must be a valid email address"
+      },
       "format": "email",
       "examples": ["michael@rithmschool.com"]
     }
