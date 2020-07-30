@@ -11,6 +11,7 @@ const { validate } = require("jsonschema");
 const { userNewSchema, userUpdateSchema } = require("../schemas");
 
 const createToken = require("../helpers/createToken");
+const e = require("express");
 
 /** GET / => {users: [user, ...]} */
 
@@ -44,7 +45,10 @@ router.post("/", async function (req, res, next) {
     if (!validation.valid) {
       return next({
         status: 400,
-        message: validation.errors.map((e) => e.stack),
+        message: validation.errors.reduce((acc, e) => {
+          acc[e.property.split(".")[1]] = e.schema.message;
+          return acc;
+        }, {}),
       });
     }
 

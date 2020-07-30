@@ -22,11 +22,6 @@ app.use("/jobs", jobsRoutes);
 app.use("/users", usersRoutes);
 app.use("/", authRoutes);
 
-app.use(express.static(path.join(__dirname, "build")));
-app.get("/*", function (req, res) {
-  res.sendFile(path.join(__dirname, "build", "../frontend/public/index.html"));
-});
-
 /** 404 handler */
 
 app.use(function (req, res, next) {
