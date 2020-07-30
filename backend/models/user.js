@@ -108,7 +108,7 @@ class User {
     }
 
     const userJobsRes = await db.query(
-      `SELECT j.id, j.title, j.company_handle, a.state 
+      `SELECT j.id, j.title, j.company_handle, j.salary, a.state 
            FROM applications AS a
              JOIN jobs AS j ON j.id = a.job_id
            WHERE a.username = $1`,
