@@ -1,9 +1,9 @@
 /** Express app for jobly. */
 
-
 const express = require("express");
 const app = express();
 const cors = require("cors");
+const path = require("path");
 app.use(express.json());
 app.use(cors());
 
@@ -11,7 +11,6 @@ app.use(cors());
 
 const morgan = require("morgan");
 app.use(morgan("tiny"));
-
 
 const usersRoutes = require("./routes/users");
 const companiesRoutes = require("./routes/companies");
@@ -22,6 +21,11 @@ app.use("/companies", companiesRoutes);
 app.use("/jobs", jobsRoutes);
 app.use("/users", usersRoutes);
 app.use("/", authRoutes);
+
+app.use(express.static(path.join(__dirname, "build")));
+app.get("/*", function (req, res) {
+  res.sendFile(path.join(__dirname, "build", "../frontend/public/index.html"));
+});
 
 /** 404 handler */
 
@@ -42,9 +46,8 @@ app.use(function (err, req, res, next) {
 
   return res.json({
     error: err,
-    message: err.message
+    message: err.message,
   });
 });
-
 
 module.exports = app;
