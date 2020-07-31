@@ -1,0 +1,29 @@
+.Unauthorized {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 50%;
+  height: 30vh;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.Unauthorized p {
+  font-size: 20px;
+  padding: 25px;
+}
+
+.Unauthorized p a {
+  text-decoration: none;
+  color: #38b9f5;
+}
+/*# sourceMappingURL=Unauthorized.css.map */

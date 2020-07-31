@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Api from "../JoblyApi";
 import LoggedInContext from "./LoggedInContext";
 import Unauthorized from "./auth/Unauthorized";
+import userIcon from "../img/user.png";
 import "../styles/Profile.css";
 
 function Profile() {
@@ -31,9 +32,7 @@ function Profile() {
     try {
       const resp = await Api.updateUser(user.username, formData);
       setUser(resp);
-    } catch (err) {
-      console.log(err);
-    }
+    } catch (err) {}
   }
 
   const handleChange = (e) => {
@@ -56,7 +55,7 @@ function Profile() {
     return (
       <div className="Profile">
         <div className="Profile-main">
-          <img src={user.photo_url} />
+          <img src={user.photo_url ? user.photo_url : userIcon} />
           <h3>{user.username}</h3>
           <a className="btn" href="#open-modal">
             Edit info
@@ -78,10 +77,11 @@ function Profile() {
         </div>
 
         <div className="Profile-applications">
-          <h2>My Applications</h2>
-          <div className="applications">
-            {user.jobs
-              ? Object.keys(user.jobs).map((id) => (
+          {Object.keys(user.jobs).length ? (
+            <>
+              <h2>My Applications</h2>
+              <div className="applications">
+                {Object.keys(user.jobs).map((id) => (
                   <div key={id} className="Profile-Job">
                     <Link className="Job-Link" to={`/jobs/${id}`}>
                       <h3>{user.jobs[id].title}</h3>
@@ -96,9 +96,10 @@ function Profile() {
                     )}
                     <br />
                   </div>
-                ))
-              : null}
-          </div>
+                ))}
+              </div>
+            </>
+          ) : null}
         </div>
 
         <div id="open-modal" className="modal-window">

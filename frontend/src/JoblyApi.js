@@ -1,13 +1,11 @@
 import axios from "axios";
 
-console.log(process.env.URL);
-const API_URL = process.env.URL || "http://localhost:3001";
+const API_URL = process.env.REACT_APP_URL || "http://localhost:3001";
 
 class JoblyApi {
   static async request(endpoint, paramsOrData = {}, verb = "get") {
     const token = localStorage.getItem("_token");
     if (token) paramsOrData._token = token;
-    console.debug("API Call:", endpoint, paramsOrData, verb);
 
     try {
       return (
@@ -18,7 +16,6 @@ class JoblyApi {
         })
       ).data;
     } catch (err) {
-      console.error("api error:", err.response);
       let message = err.response.data.message;
       throw Array.isArray(message) ? message : [message];
     }

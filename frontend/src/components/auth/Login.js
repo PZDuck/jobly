@@ -24,7 +24,6 @@ function Login() {
       _token = await Api.login(formData);
       setStatus("success");
     } catch (err) {
-      console.log(err);
       setStatus("error");
       return;
     }

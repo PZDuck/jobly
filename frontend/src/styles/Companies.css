@@ -31,5 +31,61 @@
           justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  width: 100%;
+}
+
+.not-found {
+  padding: 20%;
+  margin: auto;
+  background: white;
+  font-size: 20px;
+  text-align: center;
+}
+
+.pagination {
+  margin: 3% auto 5% auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  outline: none;
+  color: #fff;
+  font-size: 18px;
+}
+
+.pagination a {
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  margin: 0 5px;
+  padding: 15px 20px;
+  outline: none;
+  cursor: pointer;
+}
+
+.pagination a:hover {
+  -webkit-transition: 0.2s all ease-in-out;
+  transition: 0.2s all ease-in-out;
+  background-color: #ffffff;
+  border-color: #ffffff;
+  color: black;
+}
+
+.pagination .previous {
+  margin-right: 5px;
+}
+
+.pagination .next {
+  margin-left: 5px;
+}
+
+.pagination .disabled a {
+  background-color: #e6e6e6 !important;
+  color: black !important;
+}
+
+.pagination .pagination-active a {
+  background-color: #ffffff;
+  border-color: #ffffff;
+  color: black;
 }
 /*# sourceMappingURL=Companies.css.map */
