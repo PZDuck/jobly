@@ -75,3 +75,29 @@
     }
   }
 }
+
+@media only screen and (max-width: 1024px) {
+
+  .pagination {
+    font-size: 1rem;
+    margin: 1rem auto;
+
+    a {
+      padding: 1rem;
+    }
+  }
+
+}
+
+@media only screen and (max-width: 605px) {
+
+  .pagination {
+    font-size: 1rem;
+    margin: 1rem auto;
+
+    a {
+      padding: 10px;
+    }
+  }
+
+}

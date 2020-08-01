@@ -29,6 +29,14 @@ ul {
   list-style: none;
 }
 
+@media only screen and (max-width: 1024px) {
+  body {
+    background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.2)), to(rgba(0, 0, 0, 0.5))), url("../img/cover.jpg") cover no-repeat;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url("../img/cover.jpg") cover no-repeat;
+    background-size: 225% 100%;
+  }
+}
+
 .Home {
   display: -webkit-box;
   display: -ms-flexbox;

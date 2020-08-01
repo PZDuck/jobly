@@ -12,14 +12,16 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  text-align: center;
   margin: 10% auto;
+  padding: 1rem;
   width: 50%;
   height: 30vh;
   background: rgba(255, 255, 255, 0.8);
 }
 
-.Logout p {
-  padding: 25px;
+.Logout h2 {
+  padding: 2rem;
 }
 
 .Logout button {

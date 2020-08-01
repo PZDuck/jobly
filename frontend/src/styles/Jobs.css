@@ -57,7 +57,7 @@
   border: 1px solid #ffffff;
   border-radius: 5px;
   margin: 0 5px;
-  padding: 15px 20px;
+  padding: 1rem 1.5rem;
   outline: none;
   cursor: pointer;
 }
@@ -87,5 +87,25 @@
   background-color: #ffffff;
   border-color: #ffffff;
   color: black;
+}
+
+@media only screen and (max-width: 1024px) {
+  .pagination {
+    font-size: 1rem;
+    margin: 1rem auto;
+  }
+  .pagination a {
+    padding: 1rem;
+  }
+}
+
+@media only screen and (max-width: 605px) {
+  .pagination {
+    font-size: 1rem;
+    margin: 1rem auto;
+  }
+  .pagination a {
+    padding: 10px;
+  }
 }
 /*# sourceMappingURL=Jobs.css.map */
