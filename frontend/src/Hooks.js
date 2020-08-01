@@ -8,7 +8,7 @@ function useLocalStorage(key, initialValue) {
     try {
       // Get from local storage by key
       const item = window.localStorage.getItem(key);
-      // Parse stored json or if none return initialValue
+
       return item ? item : initialValue;
     } catch (error) {
       console.log(error);
@@ -32,7 +32,7 @@ function useLocalStorage(key, initialValue) {
     }
   };
 
-  const removeKey = (key) => {
+  const removeKey = () => {
     try {
       window.localStorage.removeItem(key);
     } catch (error) {
