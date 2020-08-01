@@ -1,15 +1,20 @@
 import React, { useContext } from "react";
 import { useHistory } from "react-router-dom";
-import LoggedInContext from "../LoggedInContext";
-import { useLocalStorage } from "../../Hooks";
+import { LoggedInContext } from "../LoggedInContext";
 import "../../styles/Logout.css";
 
 function Logout() {
-  const [token, setToken, removeToken] = useLocalStorage("_token", "");
-  const { loggedIn, setLoggedIn, setUser } = useContext(LoggedInContext);
+  const {
+    setLoggedIn,
+    setUser,
+    removeToken,
+    removeTokenTimestamp,
+  } = useContext(LoggedInContext);
   const history = useHistory();
+
   const logout = () => {
-    removeToken("_token");
+    removeToken();
+    removeTokenTimestamp();
     setLoggedIn(false);
     setUser(null);
     history.push("/");

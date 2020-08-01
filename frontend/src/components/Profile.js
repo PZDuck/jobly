@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Api from "../JoblyApi";
-import LoggedInContext from "./LoggedInContext";
+import { LoggedInContext } from "./LoggedInContext";
 import Unauthorized from "./auth/Unauthorized";
 import userIcon from "../img/user.png";
 import "../styles/Profile.css";
@@ -15,7 +15,7 @@ function Profile() {
     password: "",
   };
 
-  const { user, setUser } = useContext(LoggedInContext);
+  const { user } = useContext(LoggedInContext);
   const [formData, setFormData] = useState(INITIAL_STATE);
 
   useEffect(() => {
@@ -30,8 +30,7 @@ function Profile() {
 
   async function updateUser() {
     try {
-      const resp = await Api.updateUser(user.username, formData);
-      setUser(resp);
+      await Api.updateUser(user.username, formData);
     } catch (err) {}
   }
 
@@ -47,6 +46,7 @@ function Profile() {
     e.preventDefault();
     e.target.password.value = "";
     updateUser();
+    window.location.reload();
   }
 
   if (!user) {
@@ -57,7 +57,7 @@ function Profile() {
         <div className="Profile-main">
           <img src={user.photo_url ? user.photo_url : userIcon} />
           <h3>{user.username}</h3>
-          <a className="btn" href="#open-modal">
+          <a href="#open-modal" className="btn">
             Edit info
           </a>
 
@@ -75,7 +75,6 @@ function Profile() {
             </ul>
           </div>
         </div>
-
         <div className="Profile-applications">
           {Object.keys(user.jobs).length ? (
             <>
@@ -101,7 +100,6 @@ function Profile() {
             </>
           ) : null}
         </div>
-
         <div id="open-modal" className="modal-window">
           <div className="modal-form">
             <a href="#" title="Close" className="modal-close">

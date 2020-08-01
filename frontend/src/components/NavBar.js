@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
-import LoggedInContext from "./LoggedInContext";
+import { LoggedInContext } from "./LoggedInContext";
 import "../styles/NavBar.css";
 
 function NavBar() {

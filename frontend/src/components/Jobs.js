@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import LoggedInContext from "./LoggedInContext";
+import { LoggedInContext } from "./LoggedInContext";
 import SearchForm from "./SearchForm";
 import ItemCard from "./ItemCard";
 import Api from "../JoblyApi";
@@ -53,7 +53,7 @@ function Jobs() {
               </div>
               <ReactPaginate
                 pageCount={pages}
-                pageRangeDisplayed={12}
+                pageRangeDisplayed={4}
                 marginPagesDisplayed={2}
                 containerClassName={"pagination"}
                 previousLabel={"<"}

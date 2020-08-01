@@ -1,13 +1,11 @@
 import React, { useState, useContext } from "react";
 import { Redirect, Link, useHistory } from "react-router-dom";
 import Api from "../../JoblyApi";
-import LoggedInContext from "../LoggedInContext";
-import { useLocalStorage } from "../../Hooks";
+import { LoggedInContext } from "../LoggedInContext";
 import "../../styles/Register.css";
 
 function Register() {
   const history = useHistory();
-  const [token, setToken, removeToken] = useLocalStorage("_token", "");
   const [status, setStatus] = useState({});
 
   const [formData, setFormData] = useState({
@@ -18,7 +16,13 @@ function Register() {
     email: "",
   });
 
-  const { user, setUser, loggedIn, setLoggedIn } = useContext(LoggedInContext);
+  const {
+    setToken,
+    setTokenTimestamp,
+    setUser,
+    loggedIn,
+    setLoggedIn,
+  } = useContext(LoggedInContext);
 
   if (loggedIn) {
     return <Redirect to="/" />;
@@ -33,7 +37,10 @@ function Register() {
       setStatus(err[0]);
       return;
     }
+
     setToken(tkn);
+    setTokenTimestamp(new Date().getTime());
+
     const user = await Api.getUser(formData.username);
     setUser(user);
     setLoggedIn(true);

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import LoggedInContext from "./LoggedInContext";
+import { LoggedInContext } from "./LoggedInContext";
 import SearchForm from "./SearchForm";
 import ItemCard from "./ItemCard";
 import Unauthorized from "./auth/Unauthorized";

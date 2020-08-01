@@ -1,12 +1,14 @@
 import React, { useState, useContext } from "react";
 import { Redirect, Link, useHistory } from "react-router-dom";
-import LoggedInContext from "../LoggedInContext";
+import { LoggedInContext } from "../LoggedInContext";
 import Api from "../../JoblyApi";
 import "../../styles/Login.css";
 
 function Login() {
   const history = useHistory();
-  const { setToken, loggedIn, setLoggedIn } = useContext(LoggedInContext);
+  const { setToken, loggedIn, setLoggedIn, setTokenTimestamp } = useContext(
+    LoggedInContext
+  );
   const [status, setStatus] = useState(null);
   const [formData, setFormData] = useState({
     username: "",
@@ -28,6 +30,7 @@ function Login() {
       return;
     }
 
+    setTokenTimestamp(new Date().getTime());
     setToken(_token);
     setLoggedIn(true);
 
@@ -61,9 +64,9 @@ function Login() {
         </div>
         <div className="Login-right">
           <form className="Login-form" onSubmit={handleSubmit}>
-            <label for="username">Username</label>
+            <label htmlFor="username">Username</label>
             <input onChange={handleChange} type="text" name="username" />
-            <label for="password">Password</label>
+            <label htmlFor="password">Password</label>
             <input onChange={handleChange} type="password" name="password" />
             {status === "error" ? (
               <div className="error">

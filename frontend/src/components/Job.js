@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import LoggedInContext from "./LoggedInContext";
+import { LoggedInContext } from "./LoggedInContext";
 import { useParams } from "react-router-dom";
 import Api from "../JoblyApi";
 import "../styles/Job.css";
