@@ -137,7 +137,22 @@ class User {
     let { query, values } = partialUpdate("users", data, "username", username);
 
     const result = await db.query(query, values);
+
     const user = result.rows[0];
+
+    // Include user's jobs if we do not want to refresh the page
+    // Find a more elegant way of doing the same thing
+
+    // const userJobsRes = await db.query(
+    //   `SELECT j.id, j.title, j.company_handle, j.salary, a.state
+    //        FROM applications AS a
+    //          JOIN jobs AS j ON j.id = a.job_id
+    //        WHERE a.username = $1`,
+    //   [username]
+    // );
+    // let jobs = {};
+    // userJobsRes.rows.forEach((job) => (jobs[job.id] = job));
+    // user.jobs = jobs;
 
     if (!user) {
       let notFound = new Error(`There exists no user '${username}`);
