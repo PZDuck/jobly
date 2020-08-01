@@ -3,10 +3,13 @@ import ReactDOM from "react-dom";
 import "./styles/index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
+import LoggedInProvider from "./components/LoggedInContext";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <LoggedInProvider>
+      <App />
+    </LoggedInProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );
