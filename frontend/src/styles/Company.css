@@ -10,18 +10,24 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  background: rgba(255, 255, 255, 0.9);
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   margin: 5vh auto 0 auto;
   letter-spacing: 1px;
-  color: white;
+  color: black;
   max-height: 80vh;
   max-width: 80vw;
 }
 
 .CompanyItem h1 {
   margin: 2rem;
+}
+
+.CompanyItem span {
+  margin: 2rem;
+  font-style: italic;
 }
 
 .Company-jobs {

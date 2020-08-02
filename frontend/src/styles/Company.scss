@@ -5,15 +5,21 @@
 .CompanyItem {
     display: flex;
     flex-direction: column;
+    background: rgba(255, 255, 255, 0.9);
     align-items: center;
     margin: 5vh auto 0 auto;
     letter-spacing: 1px;
-    color: white;
+    color: black;
     max-height: 80vh;
     max-width: 80vw;
 
     h1 {
         margin: 2rem;
+    }
+
+    span {
+        margin: 2rem;
+        font-style: italic;
     }
 
 }
