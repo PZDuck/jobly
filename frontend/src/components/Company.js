@@ -22,7 +22,9 @@ function Company() {
         <div className="CompanyItem">
           <h1>{company.name}</h1>
           <p>{company.description}</p>
-          <span>Number of employees: {company.num_employees}</span>
+          <span>
+            Number of employees: <b>{company.num_employees}</b>
+          </span>
           <div className="Company-jobs">
             {company.jobs ? (
               company.jobs.map((job) => <ItemCard key={job.id} data={job} />)
