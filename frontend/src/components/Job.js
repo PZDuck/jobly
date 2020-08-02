@@ -20,7 +20,6 @@ function Job() {
   }, [id]);
 
   const handleClick = async (e) => {
-    console.log(e.target);
     await Api.apply(user.username, job.id, e.target.dataset.action);
 
     // Update user information to force re-render
